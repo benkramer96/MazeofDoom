@@ -28,7 +28,6 @@ public class MazeofDoom{
         
         while(choice == 0){
               
-
         System.out.println("Would you like to play on Easy, Medium, or Hard mode?");
         System.out.println();
         
@@ -40,7 +39,6 @@ public class MazeofDoom{
             doomcap = 5;
             stageamount = 3;
             choice ++;
-            
             
         }else if(difficulty.equals("medium")){
             doomcap = 3;
@@ -60,7 +58,6 @@ public class MazeofDoom{
             System.out.println("That was not a choice. Try again.");
         }
     }
-
     if(ender != 1){
         System.out.println();
         System.out.println("You must make it through the maze without recieving  " + doomcap + "Doom Points. \nDoom Points are rewarded to those who choose the wrong path.\nYou must make it through " + stageamount + " layers before recieving the " + doomcap +" Doom Points! GOOD LUCK.");
@@ -90,7 +87,6 @@ public class MazeofDoom{
             if (stages != (stageamount - 1)){
                 pathcorrect(stages);
             }
-
             stages++;
     
         }else if (yes(direction, answer) == 3){
@@ -111,10 +107,7 @@ public class MazeofDoom{
     }
     if (stages >= stageamount){
         System.out.println("You have navigated through the Maze of Doom without reaching " + doomcap + "Doom Points! You Win!");
-    }
-}
-}
-
+    }}}
     public static int yes(String choice, String answer){
             if (choice.equals(answer)){
                 return 1;
@@ -128,8 +121,6 @@ public class MazeofDoom{
                 return 0;
             }
         }      
-        
-        
     public static void printFile(String filename){
         try{
             Scanner reader = new Scanner(new File(filename)); 
@@ -139,15 +130,12 @@ public class MazeofDoom{
         }catch(Exception e){
             System.out.println("no file found"); 
         }
-
     }
     public static void stagepoints(int doom, int stage, int doomcap, int stageamount){
         System.out.println("You are currently on Stage " + stage + " And you have " + doom + " Doom points! You can choose left or right. Which direction will you go? ");
         System.out.println("You have " + (stageamount - stage + 1) + " stage(s) to complete. You can earn " + (doomcap - doom) + " more Doom Point(s) before you fail.");
         System.out.println();
-        
     }
-    
     public static int pathcorrect(int stages){
         System.out.println("You chose correctly. You progress one stage and do not earn a Doom Point! How lucky!");
         return stages;
